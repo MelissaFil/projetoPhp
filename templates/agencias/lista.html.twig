@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+     <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+    <ul class="list-group">
+       {% for agencia in agencias %}
+            <li class="list-group-item">{{agencia}}</li>
+        {% endfor %} 
+    </ul>
+    
+    </div>
+  </div>
+{% endblock %}
