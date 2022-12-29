@@ -32,11 +32,11 @@ Class AgenciasController extends AbstractController
         ['agencias'=>$agencias]);
     }
       /**
-    * @Route("/agencia/{nome}")
+    * @Route("/agencia/{nome}/detalhes")
     */
     public function show_agencia($nome)
     {
-        return $this->render('agencias/agencia.html.twig',
+        return $this->render('agencias/detalhes.html.twig',
         ['nome'=>$nome]);
     }
 
