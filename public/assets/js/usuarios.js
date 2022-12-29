@@ -1,7 +1,7 @@
 $(function(){
-    $("#adicionar_agencia").on('click',function(e){
+    $("#formAgencia").submit(function(e){
         e.preventDefault();
-        var nome = $("#nomeAgencia").val()
-        console.log(nome)
+        var nome = $(this).val()
+        console.log('oi')
     })
 })

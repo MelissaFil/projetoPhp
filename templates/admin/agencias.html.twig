@@ -1,26 +1,53 @@
 {% extends "base.html.twig" %}
-<!--Administrador-->
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="/assets/js/usuarios.js"></script>
-{% endblock %}
-
 {% block body %}
 
      <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
-    <div class="container">
-    <ul class="list-group">
-     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Nova agência" id="nomeAgencia">
-      <a id="adicionar_agencia" class="btn btn-outline-success my-2 my-sm-0">Adicionar</a>
-    </form>
-       {% for agencia in agencias %}
-            <li class="list-group-item"> <a href='agencia/{{agencia}}'>{{agencia}}</a></li>
-        {% endfor %} 
-    </ul>
-    
+   <div class="container">
+        <div class=" card pb-5">
+            <div class="card-header">
+                    Cadastrar agência
+            </div>  
+            <div class="card-body">
+                <form class="form-inline m-2 my-lg-0" id="formAgencia">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Nova agência" >
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Adicionar</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="container">
+        <div class=" card mt-5">
+            <div class="card-header">
+                Agências cadastradas
+            </div>  
+            <div class="card-body"> 
+                <table class="table table-striped">        
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for agencia in agencias %}
+                            <tr>
+                            <th scope="row">1</th>
+                            <td>{{agencia}}</td>
+                            
+                            </tr>
+                        {% endfor %} 
+
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/assets/js/usuarios.js"></script>
 {% endblock %}

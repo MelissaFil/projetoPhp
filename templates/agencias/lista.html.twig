@@ -5,10 +5,6 @@
   <div class="jumbotron">
     <div class="container">
     <ul class="list-group">
-     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Nova agência" id="nomeAgencia">
-      <a id="adicionar_agencia" class="btn btn-outline-success my-2 my-sm-0">Adicionar</a>
-    </form>
        {% for agencia in agencias %}
             <li class="list-group-item"> <a href='agencia/{{agencia}}/detalhes'>{{agencia}}</a></li>
         {% endfor %} 

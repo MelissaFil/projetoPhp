@@ -22,7 +22,7 @@ Class AdminController extends AbstractController
             'Alto de são manoel'
         ];
 
-        return $this->render('agencias/lista.html.twig',
+        return $this->render('admin/agencias.html.twig',
         ['agencias'=>$agencias]);
     }
   
