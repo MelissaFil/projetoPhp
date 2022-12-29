@@ -1,4 +1,7 @@
 {% extends "base.html.twig" %}
+ {% block stylesheets %}
+    <link rel="stylesheet" href="/assets/css/style.css">
+{% endblock %}
 {% block body %}
 
      <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -10,4 +13,9 @@
         
     </div>
   </div>
+{% endblock %}
+
+ {% block javascripts %}
+    {{ parent() }}
+    <script src="/assets/js/usuarios.js"></script>
 {% endblock %}
