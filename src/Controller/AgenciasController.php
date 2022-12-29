@@ -18,9 +18,9 @@ Class AgenciasController extends AbstractController
         return $this->render('agencias/homepage.html.twig') ;
     }
     /**
-    * @Route("/agencia/{id_agencia}")
+    * @Route("/agencias")
     */
-    public function show($id_agencia)
+    public function show()
     {
         $agencias = [
             'Central',
@@ -30,6 +30,14 @@ Class AgenciasController extends AbstractController
 
         return $this->render('agencias/lista.html.twig',
         ['agencias'=>$agencias]);
+    }
+      /**
+    * @Route("/agencia/{nome}")
+    */
+    public function show_agencia($nome)
+    {
+        return $this->render('agencias/agencia.html.twig',
+        ['nome'=>$nome]);
     }
 
     
