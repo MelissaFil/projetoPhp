@@ -3,45 +3,45 @@
 {% block title %}Gerentes index{% endblock %}
 
 {% block body %}
-    <div class-="container">
-        <div class="card">
-            <div class="card-header d-flex flex-row justify-content-between">
-                <h5>Gerentes</h5>
-                <a class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" >Novo gerente</a>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nome</th>
-                            <th>Cpf</th>
-                            <th>Telefone</th>
-                            <th>actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for gerente in gerentes %}
-                        <tr>
-                            <td>{{ gerente.id }}</td>
-                            <td>{{ gerente.nome }}</td>
-                            <td>{{ gerente.cpf }}</td>
-                            <td>{{ gerente.telefone }}</td>
-                            <td>
-                                <a href="{{ path('app_gerentes_show', {'id': gerente.id}) }}"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{ path('app_gerentes_edit', {'id': gerente.id}) }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td colspan="5">no records found</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+    
+    <div class="card">
+        <div class="card-header d-flex flex-row justify-content-between">
+            <h5>Gerentes</h5>
+            <a class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" >Novo gerente</a>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Cpf</th>
+                        <th>Telefone</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for gerente in gerentes %}
+                    <tr>
+                        <td>{{ gerente.id }}</td>
+                        <td>{{ gerente.nome }}</td>
+                        <td>{{ gerente.cpf }}</td>
+                        <td>{{ gerente.telefone }}</td>
+                        <td>
+                            <a href="{{ path('app_gerentes_show', {'id': gerente.id}) }}"><i class="fa-solid fa-eye"></i></a>
+                            <a href="{{ path('app_gerentes_edit', {'id': gerente.id}) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
+    
     
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -57,4 +57,5 @@
         </div>
     </div>
     </div>
+    
 {% endblock %}
