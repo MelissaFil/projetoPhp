@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+    <div class="modal-body">
+        {% for row in form %}
+        <div class="form-group">
+            {{form_row(row, {'attr': {'class': 'form-control'}})}}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+        <button class="btn btn-primary">{{ button_label|default('Salvar') }}</button>
+    </div>
+   
+{{ form_end(form) }}
